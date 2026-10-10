@@ -1,0 +1,10 @@
+{
+  "parts": {
+    "device_hispark_hiditing": {
+      "module_list": [
+        "//device/soc/hisilicon/hi3322:hi3322"
+      ]
+    }
+  },
+  "subsystem": "device_hispark_hiditing"
+}
