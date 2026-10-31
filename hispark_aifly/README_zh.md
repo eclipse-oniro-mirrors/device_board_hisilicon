@@ -1,4 +1,4 @@
-# HiSpark_AiFly介绍<a name="ZH-CN_TOfigures_0000001142448981"></a>
+# 3403开发板使用教程<a name="ZH-CN_TOfigures_0000001142448981"></a>
 
 -   [简介](#section11660541593)
 -   [开发板详情](#section11660542704)
@@ -9,7 +9,7 @@
     -   [环境依赖准备](#section11660544927)
         -   [前提条件](#section11660544929)
     -   [获取源码操作步骤](#section11660544930)
-        -   [OpenHarmony-SIG仓](#section11660544934)
+        -   [OpenHarmony主干仓](#section11660544934)
             -   [方式 1：repo + SSH（需配置公钥）](#section11660544931)
             -   [方式 2：repo + HTTPS](#section11660544932)
         -   [OpenHarmony-6.1-LTS](#section11660544935)
@@ -121,17 +121,17 @@ sudo update-alternatives --install /usr/bin/python3 python3 {Python 3.8路径} 1
 ```
 ## 获取源码操作步骤<a name="section11660544930"></a>
 
-### OpenHarmony-SIG仓<a name="section11660544934"></a>
+### OpenHarmony主干仓<a name="section11660544934"></a>
 
 #### 方式 1：repo + SSH（需配置公钥）<a name="section11660544931"></a>
 ```
-repo init -u git@gitcode.com/openharmony-sig/manifest -m devboard_hispark_aifly_5.1.0.xml
+repo init -u git@gitcode.com/openharmony/manifest -b master --no-repo-verify
 repo sync -c
 repo forall -c 'git lfs pull'
 ```
 #### 方式 2：repo + HTTPS<a name="section11660544932"></a>
 ```
-repo init -u https://gitcode.com/openharmony-sig/manifest -m devboard_hispark_aifly_5.1.0.xml
+repo init -u https://gitcode.com/openharmony/manifest -b master --no-repo-verify
 repo sync -c
 repo forall -c 'git lfs pull'
 ```
@@ -300,7 +300,7 @@ HiSpark_AiFly开发板支持三种烧录方式：
    - HDMI连接带音频的HDMI显示器
    - HDC使用TYPE-C连接电脑USB接口
    图8：其它外设连接示例
-   ![其它外设连接示例](figures/other.png)
+   ![其他外设连接示例](figures/other.png)
 
 ### 方式一：ToolPlatform工具烧写（Windows）<a name="section19369206114235"></a>
 
@@ -592,7 +592,7 @@ HiSpark_AiFly开发板支持三种烧录方式：
 
 ## 相关仓<a name="section1371113476307"></a>
 
-[vendor_hisilicon](https://gitee.com/openharmony/vendor_hisilicon)
+[vendor_hisilicon](https://gitcode.com/openharmony/vendor_hisilicon)
 
-[device_soc_hisilicon](https://gitee.com/openharmony/device_soc_hisilicon)
+[device_soc_hisilicon](https://gitcode.com/openharmony/device_soc_hisilicon)
 
