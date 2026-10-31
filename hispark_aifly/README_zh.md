@@ -18,8 +18,7 @@
         -   [执行 prebuilts 下载工具链](#section11660544933)
 -   [目录](#section161941989596)
 -   [构建说明](#section19369206113115)
-    -   [OpenHarmony-SIG仓](#section19369206113116)
-    -   [OpenHarmony-6.1-LTS](#section19369206113117)
+    -   [OpenHarmony主干仓](#section19369206113117)
 -   [烧录说明](#section19369206114230)
     -   [烧写配置依赖](#section19369206114231)
         -   [串口配置](#section19369206114232)
@@ -135,20 +134,7 @@ repo init -u https://gitcode.com/openharmony/manifest -b master --no-repo-verify
 repo sync -c
 repo forall -c 'git lfs pull'
 ```
-### OpenHarmony-6.1-LTS<a name="section11660544935"></a>
 
-#### 方式 1：repo + SSH（需配置公钥）<a name="section11660544936"></a>
-```
-repo init -u  git@gitcode.com/openharmony/manifest -b OpenHarmony-6.1-LTS --no-repo-verify
-repo sync -c
-repo forall -c 'git lfs pull'
-```
-#### 方式 2：repo + HTTPS<a name="section11660544937"></a>
-```
-repo init -u  https://gitcode.com/openharmony/manifest -b OpenHarmony-6.1-LTS --no-repo-verify
-repo sync -c
-repo forall -c 'git lfs pull'
-```
 ### 执行 prebuilts 下载工具链<a name="section11660544933"></a>
 ```
 bash build/prebuilts_download.sh
@@ -176,50 +162,7 @@ bash build/prebuilts_download.sh
 
 ## 构建说明<a name="section19369206113115"></a>
 
-### OpenHarmony-SIG仓<a name="section19369206113116"></a>
-
-1. 配置SDK编译工具链
-   SDK包提供内核驱动源码和Sample源码，可以通过源码进行编译。在编译前，需要配置编译工具链，将编译工具链路径加入到环境变量中。
-   将Clang编译工具链路径添加到环境变量中，执行：export PATH=/path/to/toolchains:$PATH
-   例如，Clang所在的：/path/to/prebuilts/clang/ohos/linux-x86_64/llvm/bin
-   ```
-        export PATH=/path/to/prebuilts/clang/ohos/linux-x86_64/llvm/bin:$PATH
-   ```
-   检查 Clang 配置环境变量是否生效
-   ```
-        command -v clang
-   ```
-
-2. 初次编译：
-
-   编译前请先手动修改 build/hb/util/system_util.py 第55行成如下内容：
-   ```
-        while "" in cmd and type(cmd) == list:
-   ```
-
-   初次编译需要打补丁，添加编译参数--patch，编译命令：  
-      ```
-        ./build.sh --product-name ipcamera_hispark_aifly_linux --ccache  --no-prebuilt-sdk --patch 
-      ```
-  
-   > 注 撤消patch方法：
-   >如需撤销patch.yml中所有patch，执行vendor/hisilicon/hispark_aifly_linux下的patch_revert.py脚本，如：
-   >```
-   >   cd vendor/hisilicon/hispark_aifly_linux
-   >   python3 patch_revert.py
-   >```
-   >也可手动撤消单个patch，例如取消build仓patch，可在build目录下执行
-   >```
-   >patch -p1 -R < ../device/soc/hisilicon/patches/build/build_001.patch
-   >```
-
-3. 后续编译(打完patch后)：跳过打patch环节，去掉编译参数--patch，执行命令：
-
-   ```
-   ./build.sh --product-name ipcamera_hispark_aifly_linux --ccache  --no-prebuilt-sdk
-   ```
-
-### OpenHarmony-6.1-LTS<a name="section19369206113117"></a>
+### OpenHarmony主干仓<a name="section19369206113117"></a>
 
 1. 配置SDK编译工具链
    SDK包提供内核驱动源码和Sample源码，可以通过源码进行编译。在编译前，需要配置编译工具链，将编译工具链路径加入到环境变量中。
@@ -247,7 +190,6 @@ bash build/prebuilts_download.sh
 | `--product-name ipcamera_hispark_aifly_linux` | 指定产品名称，必选                |
 | `--ccache`                                    | 启用编译缓存，加速重复编译        |
 | `--no-prebuilt-sdk`                           | 跳过 SDK 子系统编译，缩短构建时间 |
-| `--patch`                                     | 初次编译时应用芯片平台补丁        |
 
 ## 烧录说明<a name="section19369206114230"></a>
 
