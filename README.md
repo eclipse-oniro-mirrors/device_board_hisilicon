@@ -10,6 +10,7 @@
 | [HiSpark Pegasus](hispark_pegasus/README_zh.md) |  [Hi3861V100](https://gitee.com/openharmony/device_soc_hisilicon/tree/master/hi3861v100)  |      轻量系统      | 智慧IOT  |
 | [HiSpark Phoenix](hispark_phoenix/README_zh.md) |  [Hi3751V351](https://gitee.com/openharmony/device_soc_hisilicon/tree/master/hi3751v350)  |      标准系统      | 智慧媒体 |
 |  [HiSpark Taurus](hispark_taurus/README_zh.md)  | [Hi3516DV300](https://gitee.com/openharmony/device_soc_hisilicon/tree/master/hi3516dv300) | 小型系统、标准系统 | 智慧视觉 |
+|   [HiSpark Aifly](hispark_aifly/README_zh.md)   | [Hi3403V100](https://gitcode.com/openharmony/device_soc_hisilicon/tree/master/hi3403v100) |      小型系统      | 智慧视觉、AI计算 |
 
 
 ## 目录
@@ -19,6 +20,7 @@
 ├── hispark_pegasus       # hispark_pegasus开发板相关代码
 ├── hispark_phoenix       # hispark_phoenix开发板相关代码
 ├── hispark_taurus        # hispark_taurus开发板相关代码
+├── hispark_aifly         # hispark_aifly开发板相关代码
 ```
 
 
@@ -34,8 +36,8 @@
 
 ## 相关仓
 
-[device_soc_hisilicon](https://gitee.com/openharmony/device_soc_hisilicon/tree/master)
+[device_soc_hisilicon](https://gitcode.com/openharmony/device_soc_hisilicon/tree/master)
 
-[vendor_hisilicon](https://gitee.com/openharmony/vendor_hisilicon)
+[vendor_hisilicon](https://gitcode.com/openharmony/vendor_hisilicon)
 
-[third_party_u-boot](https://gitee.com/openharmony/third_party_u-boot)
+[third_party_u-boot](https://gitcode.com/openharmony/third_party_u-boot)
