@@ -12,9 +12,6 @@
         -   [OpenHarmony主干仓](#section11660544934)
             -   [方式 1：repo + SSH（需配置公钥）](#section11660544931)
             -   [方式 2：repo + HTTPS](#section11660544932)
-        -   [OpenHarmony-6.1-LTS](#section11660544935)
-            -   [方式 1：repo + SSH（需配置公钥）](#section11660544936)
-            -   [方式 2：repo + HTTPS](#section11660544937)
         -   [执行 prebuilts 下载工具链](#section11660544933)
 -   [目录](#section161941989596)
 -   [构建说明](#section19369206113115)
@@ -102,7 +99,7 @@ git config --global credential.helper store
 ```
 4. 安装码云 repo 工具
 ```
-curl -s https://gitee.com/oschina/repo/raw/fork_flow/repo-py3 > /usr/local/bin/repo
+curl -L https://mirrors.tuna.tsinghua.edu.cn/git/git-repo -o /usr/local/bin/repo
 chmod a+x /usr/local/bin/repo
 pip3 install -i https://repo.huaweicloud.com/repository/pypi/simple requests
 ```
@@ -507,7 +504,7 @@ HiSpark_AiFly开发板支持三种烧录方式：
 ### 相机应用<a name="section_quick_start_camera"></a>
 
 1. 在桌面点击**相机**应用图标，打开相机。
-2. 点击拍摄按钮完成拍照，缩略图将显示在屏幕左上角。
+2. 点击拍摄按钮完成拍照。
 
 图30：相机拍照展示
 ![相机拍照展示](./figures/take_a_picture.png)
