@@ -74,7 +74,7 @@ endif
 # Link SOC HDF driver directory into kernel tree for path dependency compilation
 	$(hide) echo "link hi3403 hdf driver to kernel tree..."
 	$(hide) mkdir -p $(KERNEL_SRC_TMP_PATH)/drivers/hdf
-	$(hide) ln -sfn $(OHOS_BUILD_HOME)/device/soc/hisilicon/hi3403v100/hdf_driver \
+	$(hide) ln -sfn $(OHOS_BUILD_HOME)/device/soc/hisilicon/hi3403v100/modules/hdf \
 	    $(KERNEL_SRC_TMP_PATH)/drivers/hdf/soc_driver
 
 ifeq ($(UNIFIED_COLLECTION_PATCH_FILE), $(wildcard $(UNIFIED_COLLECTION_PATCH_FILE)))
